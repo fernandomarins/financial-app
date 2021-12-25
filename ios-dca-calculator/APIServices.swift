@@ -19,8 +19,10 @@ struct APIService {
     func fetchSymbolsPublisher(keywords: String) -> AnyPublisher<SearchResults, Error> {
         let urlString = "https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=\(keywords)&apikey=\(apiKey)"
         
+        // TODO: - SAFE UNWRAP THE URL CREATION
         let url = URL(string: urlString)!
         
+        // Using the Combine framework
         return URLSession.shared.dataTaskPublisher(for: url).map ({$0.data})
             .decode(type: SearchResults.self, decoder: JSONDecoder())
             .receive(on: RunLoop.main)
