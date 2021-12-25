@@ -50,7 +50,7 @@ class SearchViewController: UITableViewController, UIAnimatable {
             .sink { [unowned self] searchQuery in
                 
                 // to avoid showing the activity view when the app runs
-                guard searchQuery.isEmpty else { return }
+                guard !searchQuery.isEmpty else { return }
                 
                 showLoadingAnimation()
                 
