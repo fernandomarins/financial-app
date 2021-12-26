@@ -99,6 +99,7 @@ class SearchViewController: UITableViewController, UIAnimatable {
             let searchResult = searchResults.items[indexPath.row]
             handleSelection(for: symbol, searchResult: searchResult)
         }
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

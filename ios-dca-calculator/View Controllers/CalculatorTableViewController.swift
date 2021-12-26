@@ -14,12 +14,16 @@ class CalculatorTableViewController: UITableViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet var currencyLabels: [UILabel]!
     @IBOutlet weak var investmentAmountCurrencyLabel: UILabel!
+    @IBOutlet weak var initialInvestmentAmountTextField: UITextField!
+    @IBOutlet weak var monthlyDolarCostAveraging: UITextField!
+    @IBOutlet weak var initialDateOfInvestment: UITextField!
     
     var asset: Asset?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+        setupTextFields()
     }
     
     private func setupViews() {
@@ -32,4 +36,30 @@ class CalculatorTableViewController: UITableViewController {
         }
     }
     
+    private func setupTextFields() {
+        initialInvestmentAmountTextField.addDoneButton()
+        monthlyDolarCostAveraging.addDoneButton()
+        initialDateOfInvestment.delegate = self
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDateSelection",
+           let dateSelectionTableViewController = segue.destination as? DateSelectionTableViewController,
+           let timeSeriesMonthlyAdjusted = sender as? TimeSeriesMonthlyAdjusted {
+            dateSelectionTableViewController.timeSeries = timeSeriesMonthlyAdjusted
+        }
+    }
+    
+}
+
+extension CalculatorTableViewController: UITextFieldDelegate {
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        
+        if textField == initialDateOfInvestment {
+            performSegue(withIdentifier: "showDateSelection", sender: asset?.timeSeriesMonthlyAdjusted)
+    
+        }
+        
+        return false
+    }
 }
