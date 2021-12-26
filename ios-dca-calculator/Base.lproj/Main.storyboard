@@ -461,7 +461,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="dateLabel" destination="Kcw-Zb-Lfh" id="GYQ-zJ-LK1"/>
+                                    <outlet property="monthLabel" destination="Kcw-Zb-Lfh" id="GYQ-zJ-LK1"/>
                                     <outlet property="monthsAgoLabel" destination="q9D-bO-f6W" id="q88-eU-OOz"/>
                                 </connections>
                             </tableViewCell>

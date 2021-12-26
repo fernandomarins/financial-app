@@ -26,6 +26,7 @@
 		55762EB62778726E008C91DF /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55762EB52778726E008C91DF /* String+Extension.swift */; };
 		55762EB8277886C1008C91DF /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55762EB7277886C1008C91DF /* UITextField+Extension.swift */; };
 		55762EBA2778BCB2008C91DF /* DateSelectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55762EB92778BCB2008C91DF /* DateSelectionTableViewController.swift */; };
+		55762EBC2778D554008C91DF /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55762EBB2778D554008C91DF /* Date+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		55762EB52778726E008C91DF /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		55762EB7277886C1008C91DF /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		55762EB92778BCB2008C91DF /* DateSelectionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSelectionTableViewController.swift; sourceTree = "<group>"; };
+		55762EBB2778D554008C91DF /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 			children = (
 				55762EB52778726E008C91DF /* String+Extension.swift */,
 				55762EB7277886C1008C91DF /* UITextField+Extension.swift */,
+				55762EBB2778D554008C91DF /* Date+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 				553B26CD2776AE2700E61B95 /* SearchViewController.swift in Sources */,
 				553B26EE27778E6400E61B95 /* UIAnimatable.swift in Sources */,
 				5571247D2777F5B200B68D1A /* Asset.swift in Sources */,
+				55762EBC2778D554008C91DF /* Date+Extension.swift in Sources */,
 				55762EB62778726E008C91DF /* String+Extension.swift in Sources */,
 				553B26E42776B5CB00E61B95 /* SearchTableViewCell.swift in Sources */,
 				553B26F02777AB0B00E61B95 /* TimesSeriesMonthlyAdjusted.swift in Sources */,
