@@ -96,7 +96,8 @@ class SearchViewController: UITableViewController, UIAnimatable {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let searchResults = searchResults {
             let symbol = searchResults.items[indexPath.row].symbol
-            handleSelection(for: symbol)
+            let searchResult = searchResults.items[indexPath.row]
+            handleSelection(for: symbol, searchResult: searchResult)
         }
     }
     
@@ -104,7 +105,7 @@ class SearchViewController: UITableViewController, UIAnimatable {
         return searchResults?.items.count ?? 0
     }
     
-    private func handleSelection(for symbol: String) {
+    private func handleSelection(for symbol: String, searchResult: SearchResult) {
         apiService.fetchTimesSeriesMonthlyAdjusted(keywords: symbol).sink { completion in
             switch completion {
             case .failure(let error):
@@ -112,12 +113,23 @@ class SearchViewController: UITableViewController, UIAnimatable {
             case .finished:
                 break
             }
-        } receiveValue: { timeSeriesMonthlyAdjusted in
+        } receiveValue: { [weak self] timeSeriesMonthlyAdjusted in
+            
+            let asset = Asset(searchResult: searchResult, timeSeriesMonthlyAdjusted: timeSeriesMonthlyAdjusted)
+            
+            self?.performSegue(withIdentifier: "showCalculator", sender: asset)
+            
             print("success: \(timeSeriesMonthlyAdjusted)")
         }.store(in: &subscribers)
 
-//        performSegue(withIdentifier: "showCalculator", sender: nil)
-
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showCalculator",
+        let destionation = segue.destination as? CalculatorTableViewController,
+        let asset = sender as? Asset {
+            destionation.asset = asset
+        }
     }
     
 }

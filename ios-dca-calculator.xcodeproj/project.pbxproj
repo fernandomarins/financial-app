@@ -21,6 +21,8 @@
 		553B26EC2777851C00E61B95 /* SearchPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553B26EB2777851C00E61B95 /* SearchPlaceholderView.swift */; };
 		553B26EE27778E6400E61B95 /* UIAnimatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553B26ED27778E6400E61B95 /* UIAnimatable.swift */; };
 		553B26F02777AB0B00E61B95 /* TimesSeriesMonthlyAdjusted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553B26EF2777AB0B00E61B95 /* TimesSeriesMonthlyAdjusted.swift */; };
+		5571247B2777F51F00B68D1A /* CalculatorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5571247A2777F51F00B68D1A /* CalculatorTableViewController.swift */; };
+		5571247D2777F5B200B68D1A /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5571247C2777F5B200B68D1A /* Asset.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		553B26EB2777851C00E61B95 /* SearchPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlaceholderView.swift; sourceTree = "<group>"; };
 		553B26ED27778E6400E61B95 /* UIAnimatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAnimatable.swift; sourceTree = "<group>"; };
 		553B26EF2777AB0B00E61B95 /* TimesSeriesMonthlyAdjusted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimesSeriesMonthlyAdjusted.swift; sourceTree = "<group>"; };
+		5571247A2777F51F00B68D1A /* CalculatorTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorTableViewController.swift; sourceTree = "<group>"; };
+		5571247C2777F5B200B68D1A /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				553B26CC2776AE2700E61B95 /* SearchViewController.swift */,
+				5571247A2777F51F00B68D1A /* CalculatorTableViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -109,6 +114,7 @@
 			children = (
 				553B26E827772EC900E61B95 /* SearchResults.swift */,
 				553B26EF2777AB0B00E61B95 /* TimesSeriesMonthlyAdjusted.swift */,
+				5571247C2777F5B200B68D1A /* Asset.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -192,8 +198,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5571247B2777F51F00B68D1A /* CalculatorTableViewController.swift in Sources */,
 				553B26CD2776AE2700E61B95 /* SearchViewController.swift in Sources */,
 				553B26EE27778E6400E61B95 /* UIAnimatable.swift in Sources */,
+				5571247D2777F5B200B68D1A /* Asset.swift in Sources */,
 				553B26E42776B5CB00E61B95 /* SearchTableViewCell.swift in Sources */,
 				553B26F02777AB0B00E61B95 /* TimesSeriesMonthlyAdjusted.swift in Sources */,
 				553B26C92776AE2700E61B95 /* AppDelegate.swift in Sources */,
