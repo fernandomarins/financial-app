@@ -40,9 +40,16 @@ class CalculatorTableViewController: UITableViewController {
         setupTextFields()
         setupDateSlider()
         observeForm()
+        resetViews()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        initialInvestmentAmountTextField.becomeFirstResponder()
     }
     
     private func setupViews() {
+        navigationItem.title = asset?.searchResult.symbol
         symbolLabel.text = asset?.searchResult.symbol
         nameLabel.text = asset?.searchResult.name
         investmentAmountCurrencyLabel.text = asset?.searchResult.currency
@@ -109,7 +116,8 @@ class CalculatorTableViewController: UITableViewController {
             self?.gainLabel.text = result?.gainAmount.toCurrencyFormat(hasDollarSymbol: false, hasDecimalPlaces: false).prefix(withText: gainSymbol)
             self?.yieldLabel.text = result?.yield.percentageFormat.prefix(withText: gainSymbol).addBrackets()
             self?.yieldLabel.textColor = isProfitable ? .systemGreen : .systemRed
-            self?.annualReturnLabel.text = result?.annualReturn.stringValue
+            self?.annualReturnLabel.text = result?.annualReturn.percentageFormat
+            self?.annualReturnLabel.textColor = isProfitable ? .systemGreen : .systemRed
             
         }.store(in: &subscribers)
         
@@ -143,6 +151,14 @@ class CalculatorTableViewController: UITableViewController {
             let dateString = monthInfo.date.MMYYFormat
             initialDateOfInvestment.text = dateString
         }
+    }
+    
+    private func resetViews() {
+        currentValueLabel.text = "0.00"
+        investAmountLabel.text  = "0.00"
+        gainLabel.text = "-"
+        yieldLabel.text = "-"
+        annualReturnLabel.text = "-"
     }
     
     @IBAction func dateSliderDidChanger(_ sender: UISlider) {
