@@ -45,6 +45,11 @@ class SearchViewController: UITableViewController, UIAnimatable {
         navigationItem.title = "Search"
     }
     
+    private func setupTableView() {
+        tableView.isScrollEnabled = false
+        tableView.tableFooterView = UIView()
+    }
+    
     private func observableForm() {
         $searchQuery.debounce(for: .milliseconds(750), scheduler: RunLoop.main)
             .sink { [unowned self] searchQuery in
@@ -67,6 +72,7 @@ class SearchViewController: UITableViewController, UIAnimatable {
                 } receiveValue: { searchResults in
                     self.searchResults = searchResults
                     self.tableView.reloadData()
+                    self.tableView.isScrollEnabled = true
                 }.store(in: &self.subscribers)
                 
             }.store(in: &subscribers)

@@ -9,11 +9,11 @@ import Foundation
 
 extension Double {
     var stringValue: String {
-        return String(describing: self)
+        String(describing: self)
     }
     
     var twoDecimalPlaceString: String {
-        return String(format: "%.2f", self)
+        String(format: "%.2f", self)
     }
     
     var currencyFormat: String {
